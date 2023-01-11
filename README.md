@@ -10,3 +10,6 @@ https://asciinema.org/a/ul5vPftZze20SfEzJWHemyjWe
 
 Asciinema "brain-calc":
 https://asciinema.org/a/1LQcec9DRUYoScMRGQIIANNWj
+
+Asciinema "brain-gcd":
+https://asciinema.org/a/pT1cu3gwm4GUxQo5Am9vfR1Ic
