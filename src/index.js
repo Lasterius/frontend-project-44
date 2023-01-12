@@ -4,6 +4,7 @@ import readlineSync from 'readline-sync';
 import evenGame from './games/even.js';
 import calcGame from './games/calc.js';
 import gcdGame from './games/gcd.js';
+import progressionGame from './games/progression.js';
 
 console.log('Welcome to the Brain Games!');
 
@@ -17,3 +18,5 @@ console.log(evenGame());
 console.log(calcGame());
 
 console.log(gcdGame());
+
+console.log(progressionGame());
