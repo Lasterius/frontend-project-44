@@ -20,6 +20,9 @@ const everyRound = () => {
     case '*':
       resultOperation += randomNumber * randomNumber2;
       break;
+    default:
+      resultOperation = '1';
+      break;
   }
   const rightAnswer = String(resultOperation);
   return [question, rightAnswer];

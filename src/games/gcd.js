@@ -7,16 +7,7 @@ const everyRound = () => {
   const randomNumber = getRandomInterval(1, 20);
   const randomNumber2 = getRandomInterval(1, 20);
   const question = `${randomNumber} ${randomNumber2}`;
-  const gcd = (n1, n2) => {
-    n1 = Math.abs(n1);
-    n2 = Math.abs(n2);
-    while (n2) {
-      const t = n2;
-      n2 = n1 % n2;
-      n1 = t;
-    }
-    return n1;
-  };
+  const gcd = (x, y) => (x % y === 0 ? y : gcd(y, x % y));
   const rightAnswer = String(gcd(randomNumber, randomNumber2));
   return [question, rightAnswer];
 };
