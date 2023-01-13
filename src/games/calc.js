@@ -1,5 +1,5 @@
 import game from '../index.js';
-import { getRandomInterval } from '../functions.js';
+import getRandomInterval from '../functions.js';
 
 const condition = 'What is the result of the expression?';
 

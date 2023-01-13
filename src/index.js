@@ -13,9 +13,7 @@ export default (condition, everyRound) => {
     if (rightAnswer === answerUser) {
       console.log('Correct!');
     } else {
-      console.log(
-        `"${answerUser}" is wrong answer ;(. Correct answer was '${rightAnswer}'.\nLet's try again, ${userName}!`
-      );
+      console.log(`"${answerUser}" is wrong answer ;(. Correct answer was '${rightAnswer}'.\nLet's try again, ${userName}!`);
       return;
     }
   }

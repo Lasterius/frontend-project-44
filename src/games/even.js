@@ -1,5 +1,5 @@
 import game from '../index.js';
-import { getRandomInterval } from '../functions.js';
+import getRandomInterval from '../functions.js';
 
 const condition = 'Answer "yes" if the number is even, otherwise answer "no".';
 

@@ -1,8 +1,7 @@
 import game from '../index.js';
-import { getRandomInterval } from '../functions.js';
+import getRandomInterval from '../functions.js';
 
-const condition =
-  'Answer "yes" if given number is prime. Otherwise answer "no".';
+const condition = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const everyRound = () => {
   const randomNumber = getRandomInterval(2, 20);
