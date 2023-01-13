@@ -8,8 +8,8 @@ const everyRound = () => {
   const randomNumber2 = getRandomInterval(1, 20);
   const question = `${randomNumber} ${randomNumber2}`;
   const gcd = (n1, n2) => {
-    n1 = Math.abs(x);
-    n2 = Math.abs(y);
+    n1 = Math.abs(n1);
+    n2 = Math.abs(n2);
     while (n2) {
       const t = n2;
       n2 = n1 % n2;
