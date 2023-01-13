@@ -1,52 +1,37 @@
-import readlineSync from 'readline-sync';
+import game from '../index.js';
+import { getRandomInterval } from '../functions.js';
 
-const primeGame = () => {
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-  const getRandomInterval = (min, max) => {
-    let rand = min + Math.random() * (max + 1 - min);
-    return Math.floor(rand);
-  };
-  for (let i = 0; i < 3; i += 1) {
-    const randomNumber = getRandomInterval(2, 20);
-    console.log(`Question: ${randomNumber}`);
-    const answerUser = readlineSync.question('Your answer: ');
+const condition =
+  'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-    const isPrime = (n) => {
-      let result = '';
-      if (n === 2) {
-        result = 'prime';
-        return result;
-      }
-
-      let i = 2;
-      const limit = Math.sqrt(n);
-      while (i <= limit) {
-        if (n % i === 0) {
-          result = 'composite';
-          return result;
-        }
-        i += 1;
-      }
+const everyRound = () => {
+  const randomNumber = getRandomInterval(2, 20);
+  const question = randomNumber;
+  const isPrime = (n) => {
+    let result = '';
+    if (n === 2) {
       result = 'prime';
       return result;
-    };
-
-    let rightAnswer = isPrime(randomNumber);
-
-    const checking1 = rightAnswer === 'prime' && answerUser === 'yes';
-    const checking2 = rightAnswer === 'composite' && answerUser === 'no';
-
-    if (checking1 === true || checking2 === true) {
-      console.log('Correct!');
-    } else {
-      const opposite = answerUser === 'yes' ? 'no' : 'yes';
-      const errorMessage = `"${answerUser}" is wrong answer ;(. Correct answer was '${opposite}'.\nLet's try again, ${userName}!`;
-      return errorMessage;
     }
-  }
+    let i = 2;
+    const limit = Math.sqrt(n);
+    while (i <= limit) {
+      if (n % i === 0) {
+        result = 'composite';
+        return result;
+      }
+      i += 1;
+    }
+    result = 'prime';
+    return result;
+  };
+  const checking = isPrime(randomNumber);
+  const rightAnswer = checking === 'prime' ? 'yes' : 'no';
+  return [question, rightAnswer];
+};
 
-  const result = `Congratulations, ${userName}!`;
-  return result;
+const primeGame = () => {
+  game(condition, everyRound);
 };
 
 export default primeGame;

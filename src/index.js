@@ -1,25 +1,23 @@
-#!/usr/bin/env node
-
 import readlineSync from 'readline-sync';
-import evenGame from './games/even.js';
-import calcGame from './games/calc.js';
-import gcdGame from './games/gcd.js';
-import progressionGame from './games/progression.js';
-import primeGame from './games/prime.js';
 
-console.log('Welcome to the Brain Games!');
+export default (condition, everyRound) => {
+  console.log('Welcome to the Brain Games!');
+  const userName = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${userName}!`);
+  console.log(condition);
 
-const getName = () => readlineSync.question('May I have your name? ');
-const userName = getName();
-
-console.log(`Hello, ${userName}!`);
-
-console.log(evenGame());
-
-console.log(calcGame());
-
-console.log(gcdGame());
-
-console.log(progressionGame());
-
-console.log(primeGame());
+  for (let i = 0; i < 3; i += 1) {
+    const [question, rightAnswer] = everyRound();
+    console.log(`Question: ${question}`);
+    const answerUser = readlineSync.question('Your answer: ');
+    if (rightAnswer === answerUser) {
+      console.log('Correct!');
+    } else {
+      console.log(
+        `"${answerUser}" is wrong answer ;(. Correct answer was '${rightAnswer}'.\nLet's try again, ${userName}!`
+      );
+      return;
+    }
+  }
+  console.log(`Congratulations, ${userName}!`);
+};

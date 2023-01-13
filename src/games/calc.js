@@ -1,43 +1,32 @@
-import readlineSync from 'readline-sync';
+import game from '../index.js';
+import { getRandomInterval } from '../functions.js';
+
+const condition = 'What is the result of the expression?';
+
+const everyRound = () => {
+  const randomNumber = getRandomInterval(1, 20);
+  const randomNumber2 = getRandomInterval(1, 20);
+  const arrayOfRandomOperations = ['+', '-', '*'];
+  const randomOperation = arrayOfRandomOperations[getRandomInterval(0, 2)];
+  const question = `${randomNumber} ${randomOperation} ${randomNumber2}`;
+  let resultOperation = 0;
+  switch (randomOperation) {
+    case '+':
+      resultOperation += randomNumber + randomNumber2;
+      break;
+    case '-':
+      resultOperation += randomNumber - randomNumber2;
+      break;
+    case '*':
+      resultOperation += randomNumber * randomNumber2;
+      break;
+  }
+  const rightAnswer = String(resultOperation);
+  return [question, rightAnswer];
+};
 
 const calcGame = () => {
-  console.log('What is the result of the expression?');
-  const getRandomInt = (max) => Math.floor(Math.random() * max);
-  for (let i = 0; i < 3; i += 1) {
-    const randomNumber = getRandomInt(20);
-    const randomNumber2 = getRandomInt(20);
-    const arrayOfRandomOperations = ['+', '-', '*'];
-    const randomOperation = arrayOfRandomOperations[getRandomInt(3)];
-    console.log(
-      `Question: ${randomNumber} ${randomOperation} ${randomNumber2}`
-    );
-    const answerUser = readlineSync.question('Your answer: ');
-
-    let resultOperation = 0;
-    switch (randomOperation) {
-      case '+':
-        resultOperation += randomNumber + randomNumber2;
-        break;
-      case '-':
-        resultOperation += randomNumber - randomNumber2;
-        break;
-      case '*':
-        resultOperation += randomNumber * randomNumber2;
-        break;
-    }
-
-    const checking = resultOperation === +answerUser;
-
-    if (checking === true) {
-      console.log('Correct!');
-    } else {
-      const errorMessage = `"${answerUser}" is wrong answer ;(. Correct answer was '${resultOperation}'.\nLet's try again, ${userName}!`;
-      return errorMessage;
-    }
-  }
-
-  const result = `Congratulations, ${userName}!`;
-  return result;
+  game(condition, everyRound);
 };
 
 export default calcGame;

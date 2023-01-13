@@ -2,4 +2,4 @@
 
 import calcGame from '../src/games/calc.js';
 
-console.log(calcGame());
+calcGame();

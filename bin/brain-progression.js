@@ -2,4 +2,4 @@
 
 import progressionGame from '../src/games/progression.js';
 
-console.log(progressionGame());
+progressionGame();
