@@ -1,30 +1,14 @@
-import game from '../index.js';
-import getRandomInterval from '../functions.js';
+import startGame from '../index.js';
+import { getProgression, hiddenElement } from '../helpers.js';
 
 const condition = 'What number is missing in the progression?';
 
-const everyRound = () => {
-  let hiddenElement = 0;
-  const progression = () => {
-    const result = [];
-    let startElement = getRandomInterval(1, 10);
-    const plusElement = getRandomInterval(2, 5);
-    for (let j = 1; j <= getRandomInterval(5, 10); j += 1) {
-      startElement += plusElement;
-      result.push(startElement);
-    }
-    const randomIndex = getRandomInterval(0, 5);
-    hiddenElement = result[randomIndex];
-    result[randomIndex] = '..';
-    return result.join(' ');
-  };
-  const question = progression();
+const refreshEveryRound = () => {
+  const question = getProgression();
   const rightAnswer = String(hiddenElement);
   return [question, rightAnswer];
 };
 
-const progressionGame = () => {
-  game(condition, everyRound);
+export default () => {
+  startGame(condition, refreshEveryRound);
 };
-
-export default progressionGame;

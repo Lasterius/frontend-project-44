@@ -2,7 +2,7 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "type": "module",
-  "description": "[![Actions Status](https://github.com/Lasterius/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/Lasterius/frontend-project-44/actions)",
+  "description": "My first project as a frontend develor on Hexlet. You can try your brain in 'Brain Games'!",
   "bin": {
     "brain-games": "bin/brain-games.js",
     "brain-even": "bin/brain-even.js",

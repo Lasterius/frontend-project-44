@@ -1,35 +1,18 @@
-import game from '../index.js';
-import getRandomInterval from '../functions.js';
+import startGame from '../index.js';
+import { getRandomInteger, getResultOperation } from '../helpers.js';
 
 const condition = 'What is the result of the expression?';
 
-const everyRound = () => {
-  const randomNumber = getRandomInterval(1, 20);
-  const randomNumber2 = getRandomInterval(1, 20);
+const refreshEveryRound = () => {
+  const randomNumber = getRandomInteger(1, 20);
+  const randomNumber2 = getRandomInteger(1, 20);
   const arrayOfRandomOperations = ['+', '-', '*'];
-  const randomOperation = arrayOfRandomOperations[getRandomInterval(0, 2)];
+  const randomOperation = arrayOfRandomOperations[getRandomInteger(0, 2)];
   const question = `${randomNumber} ${randomOperation} ${randomNumber2}`;
-  let resultOperation = 0;
-  switch (randomOperation) {
-    case '+':
-      resultOperation += randomNumber + randomNumber2;
-      break;
-    case '-':
-      resultOperation += randomNumber - randomNumber2;
-      break;
-    case '*':
-      resultOperation += randomNumber * randomNumber2;
-      break;
-    default:
-      resultOperation = '1';
-      break;
-  }
-  const rightAnswer = String(resultOperation);
+  const rightAnswer = String(getResultOperation());
   return [question, rightAnswer];
 };
 
-const calcGame = () => {
-  game(condition, everyRound);
+export default () => {
+  startGame(condition, refreshEveryRound);
 };
-
-export default calcGame;
