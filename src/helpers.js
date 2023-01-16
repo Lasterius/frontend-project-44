@@ -62,5 +62,5 @@ const getResultOfOperation = (operation, number, number2) => {
 const isEven = (number) => (number % 2 === 0 ? 'yes' : 'no');
 
 export {
-  getGCD, getRandomInteger, getProgression, obj, isPrime, getResultOfOperation, isEven
+  getGCD, getRandomInteger, getProgression, obj, isPrime, getResultOfOperation, isEven,
 };
