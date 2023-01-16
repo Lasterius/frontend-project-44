@@ -11,4 +11,4 @@ const refreshEveryRound = () => {
 
 export default () => {
   startGame(condition, refreshEveryRound);
-}; 
+};
