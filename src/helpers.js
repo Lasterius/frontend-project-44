@@ -5,7 +5,7 @@ const getRandomInteger = (min, max) => {
 
 const getGCD = (x, y) => (x % y === 0 ? y : getGCD(y, x % y));
 
-let obj = { hiddenElement: 0 };
+const obj = { hiddenElement: 0 };
 
 const getProgression = () => {
   const result = [];
@@ -61,4 +61,6 @@ const getResultOfOperation = (operation, number, number2) => {
 
 const isEven = (number) => (number % 2 === 0 ? 'yes' : 'no');
 
-export { getGCD, getRandomInteger, getProgression, obj, isPrime, getResultOfOperation, isEven };
+export {
+  getGCD, getRandomInteger, getProgression, obj, isPrime, getResultOfOperation, isEven
+};
