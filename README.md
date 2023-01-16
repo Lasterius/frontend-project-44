@@ -31,31 +31,51 @@ Attention! Commands must be run from the games directory!
 ## Play demo
 
 **Calculator**
-```make brain-calc```
+
+```
+make brain-calc
+```
+
 [![asciicast](https://asciinema.org/a/1LQcec9DRUYoScMRGQIIANNWj.svg)](https://asciinema.org/a/1LQcec9DRUYoScMRGQIIANNWj)
 
 <hr>
 
 **Progression**
-```make brain-progression```
+
+```
+make brain-progression
+```
+
 [![asciicast](https://asciinema.org/a/oSBePppcL0RsS0DyGr8fss8oM.svg)](https://asciinema.org/a/oSBePppcL0RsS0DyGr8fss8oM)
 
 <hr>
 
 **Definition of an even number**
-```make brain-even```
+
+```
+make brain-even
+```
+
 [![asciicast](https://asciinema.org/a/ul5vPftZze20SfEzJWHemyjWe.svg)](https://asciinema.org/a/ul5vPftZze20SfEzJWHemyjWe)
 
 <hr>
 
 **Finding the greatest common divisor**
-```make brain-gcd```
+
+```
+make brain-gcd
+```
+
 [![asciicast](https://asciinema.org/a/pT1cu3gwm4GUxQo5Am9vfR1Ic.svg)](https://asciinema.org/a/pT1cu3gwm4GUxQo5Am9vfR1Ic)
 
 <hr>
 
 **Definition of a prime number**
-```make brain-prime```
+
+```
+make brain-prime
+```
+
 [![asciicast](https://asciinema.org/a/5dsCYyDw7ZSYGXYvpq6oyFP8m.svg)](https://asciinema.org/a/5dsCYyDw7ZSYGXYvpq6oyFP8m)
 
 <hr>

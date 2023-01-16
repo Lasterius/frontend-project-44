@@ -40,24 +40,25 @@ const isPrime = (n) => {
   return result;
 };
 
-const getResultOperation = (resultOperation, randomNumber, randomNumber2) => {
-  let resultOperation = 0;
-  switch (randomOperation) {
+const getResultOfOperation = (operation, number, number2) => {
+  let result = 0;
+  switch (operation) {
     case '+':
-      resultOperation += randomNumber + randomNumber2;
+      result += number + number2;
       break;
     case '-':
-      resultOperation += randomNumber - randomNumber2;
+      result += number - number2;
       break;
     case '*':
-      resultOperation += randomNumber * randomNumber2;
+      result += number * number2;
       break;
     default:
-      resultOperation = '1';
+      result += 1;
       break;
   }
+  return result;
 };
 
 const isEven = (number) => (number % 2 === 0 ? 'yes' : 'no');
 
-export { getGCD, getRandomInteger, getProgression, hiddenElement, isPrime, getResultOperation, isEven };
+export { getGCD, getRandomInteger, getProgression, hiddenElement, isPrime, getResultOfOperation, isEven };

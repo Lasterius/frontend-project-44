@@ -1,5 +1,5 @@
 import startGame from '../index.js';
-import { getRandomInteger, getResultOperation } from '../helpers.js';
+import { getRandomInteger, getResultOfOperation } from '../helpers.js';
 
 const condition = 'What is the result of the expression?';
 
@@ -9,7 +9,8 @@ const refreshEveryRound = () => {
   const arrayOfRandomOperations = ['+', '-', '*'];
   const randomOperation = arrayOfRandomOperations[getRandomInteger(0, 2)];
   const question = `${randomNumber} ${randomOperation} ${randomNumber2}`;
-  const rightAnswer = String(getResultOperation());
+  const resultOfOperation = getResultOfOperation(randomOperation, randomNumber, randomNumber2);
+  const rightAnswer = String(resultOfOperation);
   return [question, rightAnswer];
 };
 

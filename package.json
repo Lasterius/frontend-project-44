@@ -2,7 +2,7 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "type": "module",
-  "description": "My first project as a frontend develor on Hexlet. You can try your brain in 'Brain Games'!",
+  "description": "My first project as a frontend developer on Hexlet. You can test your brain in 'Brain Games'!",
   "bin": {
     "brain-games": "bin/brain-games.js",
     "brain-even": "bin/brain-even.js",
