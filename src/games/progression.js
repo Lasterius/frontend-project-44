@@ -1,5 +1,5 @@
 import startGame from '../index.js';
-import { getProgression, getRandomInteger, obj } from '../helpers.js';
+import { getProgression, getRandomInteger } from '../helpers.js';
 
 const condition = 'What number is missing in the progression?';
 
