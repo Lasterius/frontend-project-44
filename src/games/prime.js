@@ -6,8 +6,7 @@ const condition = 'Answer "yes" if given number is prime. Otherwise answer "no".
 const refreshEveryRound = () => {
   const randomNumber = getRandomInteger(2, 20);
   const question = randomNumber;
-  const checking = isPrime(randomNumber);
-  const rightAnswer = checking === 'prime' ? 'yes' : 'no';
+  const rightAnswer = isPrime(randomNumber) ? 'yes' : 'no';
   return [question, rightAnswer];
 };
 

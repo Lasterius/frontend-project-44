@@ -6,7 +6,7 @@ const condition = 'Answer "yes" if the number is even, otherwise answer "no".';
 const refreshEveryRound = () => {
   const randomNumber = getRandomInteger(1, 20);
   const question = randomNumber;
-  const rightAnswer = isEven(randomNumber);
+  const rightAnswer = isEven(randomNumber) ? 'yes' : 'no';
   return [question, rightAnswer];
 };
 

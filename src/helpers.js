@@ -7,37 +7,25 @@ const getGCD = (x, y) => (x % y === 0 ? y : getGCD(y, x % y));
 
 const obj = { hiddenElement: 0 };
 
-const getProgression = () => {
+const getProgression = (startElement, progressionLength, progressionStep) => {
   const result = [];
-  let startElement = getRandomInteger(1, 10);
-  const plusElement = getRandomInteger(2, 5);
-  for (let j = 1; j <= getRandomInteger(5, 10); j += 1) {
-    startElement += plusElement;
+  for (let i = 0; i < progressionLength; i += 1) {
     result.push(startElement);
+    startElement += progressionStep;
   }
-  const randomIndex = getRandomInteger(0, 5);
-  obj.hiddenElement = result[randomIndex];
-  result[randomIndex] = '..';
-  return result.join(' ');
+  return result;
 };
 
-const isPrime = (n) => {
-  let result = '';
-  if (n === 2) {
-    result = 'prime';
-    return result;
+const isPrime = (num) => {
+  if (num < 2) {
+    return false;
   }
-  let i = 2;
-  const limit = Math.sqrt(n);
-  while (i <= limit) {
-    if (n % i === 0) {
-      result = 'composite';
-      return result;
+  for (let i = 2; i <= Math.sqrt(num); i += 1) {
+    if (num % i === 0) {
+      return false;
     }
-    i += 1;
   }
-  result = 'prime';
-  return result;
+  return true;
 };
 
 const getResultOfOperation = (operation, number, number2) => {
@@ -53,13 +41,14 @@ const getResultOfOperation = (operation, number, number2) => {
       result += number * number2;
       break;
     default:
-      result += 1;
+      String(result);
+      result = 'Error. Use correct operator.';
       break;
   }
   return result;
 };
 
-const isEven = (number) => (number % 2 === 0 ? 'yes' : 'no');
+const isEven = (number) => (number % 2 === 0 ? true : false);
 
 export {
   getGCD, getRandomInteger, getProgression, obj, isPrime, getResultOfOperation, isEven,
