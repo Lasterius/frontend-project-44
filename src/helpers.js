@@ -7,9 +7,10 @@ const getGCD = (x, y) => (x % y === 0 ? y : getGCD(y, x % y));
 
 const getProgression = (startElement, progressionLength, progressionStep) => {
   const result = [];
+  let start = startElement;
   for (let i = 0; i < progressionLength; i += 1) {
-    result.push(startElement);
-    startElement += progressionStep;
+    result.push(start);
+    start += progressionStep;
   }
   return result;
 };
@@ -46,6 +47,8 @@ const getResultOfOperation = (operation, number, number2) => {
   return result;
 };
 
-const isEven = (number) => (number % 2 === 0 ? true : false);
+const isEven = (number) => number % 2 === 0;
 
-export { getGCD, getRandomInteger, getProgression, isPrime, getResultOfOperation, isEven, };
+export {
+  getGCD, getRandomInteger, getProgression, isPrime, getResultOfOperation, isEven,
+};
