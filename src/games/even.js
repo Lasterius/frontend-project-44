@@ -10,6 +10,4 @@ const refreshEveryRound = () => {
   return [question, rightAnswer];
 };
 
-export default () => {
-  startGame(condition, refreshEveryRound);
-};
+export default () => startGame(condition, refreshEveryRound);

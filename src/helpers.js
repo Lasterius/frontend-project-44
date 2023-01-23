@@ -7,10 +7,10 @@ const getGCD = (x, y) => (x % y === 0 ? y : getGCD(y, x % y));
 
 const getProgression = (startElement, progressionLength, progressionStep) => {
   const result = [];
-  let start = startElement;
+  let progressionTerm = startElement;
   for (let i = 0; i < progressionLength; i += 1) {
-    result.push(start);
-    start += progressionStep;
+    result.push(progressionTerm);
+    progressionTerm += progressionStep;
   }
   return result;
 };
@@ -27,7 +27,7 @@ const isPrime = (num) => {
   return true;
 };
 
-const getResultOfOperation = (operation, number, number2) => {
+const calculate = (operation, number, number2) => {
   let result = 0;
   switch (operation) {
     case '+':
@@ -40,9 +40,7 @@ const getResultOfOperation = (operation, number, number2) => {
       result += number * number2;
       break;
     default:
-      String(result);
-      result = 'Error. Use correct operator.';
-      break;
+      throw new Error('Error. Use correct operator.');
   }
   return result;
 };
@@ -50,5 +48,5 @@ const getResultOfOperation = (operation, number, number2) => {
 const isEven = (number) => number % 2 === 0;
 
 export {
-  getGCD, getRandomInteger, getProgression, isPrime, getResultOfOperation, isEven,
+  getGCD, getRandomInteger, getProgression, isPrime, calculate, isEven,
 };
