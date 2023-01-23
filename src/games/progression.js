@@ -8,7 +8,7 @@ const refreshEveryRound = () => {
   const progressionStep = getRandomInteger(2, 5);
   const progressionLength = getRandomInteger(5, 10);
   const progression = getProgression(startElement, progressionLength, progressionStep);
-  const randomIndex = getRandomInteger(0, 5);
+  const randomIndex = getRandomInteger(0, 4);
   const hiddenElement = progression[randomIndex];
   progression[randomIndex] = '..';
   const question = progression.join(' ');
