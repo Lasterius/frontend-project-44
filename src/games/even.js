@@ -4,8 +4,7 @@ import { getRandomInteger, isEven } from '../helpers.js';
 const condition = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const refreshEveryRound = () => {
-  const randomNumber = getRandomInteger(1, 20);
-  const question = randomNumber;
+  const question = getRandomInteger(1, 20);
   const rightAnswer = isEven(randomNumber) ? 'yes' : 'no';
   return [question, rightAnswer];
 };
