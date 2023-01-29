@@ -3,7 +3,7 @@ import { getRandomInteger, calculate } from '../helpers.js';
 
 const condition = 'What is the result of the expression?';
 
-const refreshEveryRound = () => {
+const getData = () => {
   const randomNumber = getRandomInteger(1, 20);
   const randomNumber2 = getRandomInteger(1, 20);
   const operators = ['+', '-', '*'];
@@ -14,4 +14,4 @@ const refreshEveryRound = () => {
   return [question, rightAnswer];
 };
 
-export default () => startGame(condition, refreshEveryRound);
+export default () => startGame(condition, getData);

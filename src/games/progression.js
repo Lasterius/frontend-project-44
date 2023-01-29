@@ -3,7 +3,7 @@ import { getProgression, getRandomInteger } from '../helpers.js';
 
 const condition = 'What number is missing in the progression?';
 
-const refreshEveryRound = () => {
+const getData = () => {
   const startElement = getRandomInteger(1, 10);
   const progressionStep = getRandomInteger(2, 5);
   const progressionLength = getRandomInteger(5, 10);
@@ -16,4 +16,4 @@ const refreshEveryRound = () => {
   return [question, rightAnswer];
 };
 
-export default () => startGame(condition, refreshEveryRound);
+export default () => startGame(condition, getData);
