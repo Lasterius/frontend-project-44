@@ -18,7 +18,7 @@ Node.js version 18.12.1 or higher.
 
 ## Setup
 
-Attention! Commands must be run from the games directory!
+Attention! Commands must be run from the games directory.
 
 - Check the current updates for database with available packages: enter command line `apt update`
 - Install **Node.js** package: enter command line `apt install nodejs`
